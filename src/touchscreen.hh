@@ -25,7 +25,13 @@ public:
   void registerCallback(std::function<void() > _callback);
 
 
+
 private:
+  using FileDescriptor = int;
+
+  //The system input event handler to read from.
+  FileDescriptor device;
+
   //Timestamp of most recent partial update.
   timeval timestamp;
 
